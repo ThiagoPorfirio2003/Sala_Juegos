@@ -1,0 +1,52 @@
+<div class="position-absolute top-50 start-50 translate-middle mt-3">
+  <div class="juego">
+    <div class="row align-items-start py-3">
+      <div class="col align-self-center pe-0" style="justify-content: center;display: flex;">
+        <img src={{this.partidaActual.UrlImagenes[0]}} alt="">
+      </div>
+    
+      <div class="col align-self-center ps-0" style="justify-content: center;display: flex;">
+        <img src={{this.partidaActual.UrlImagenes[1]}} alt="">
+      </div>
+    </div>
+  
+    <div class="row align-items-start">
+      <div class="col align-self-center pe-0" style="justify-content: center;display: flex;">
+        <img src={{this.partidaActual.UrlImagenes[2]}} alt="">
+      </div>
+    
+      <div class="col align-self-center ps-0" style="justify-content: center;display: flex;">
+        <img src={{this.partidaActual.UrlImagenes[3]}} alt="">
+      </div>
+    </div>
+    
+    <div class="row">
+      <div id="palabraOculta" class="display-4 text-center" style="color: white;">
+        {{this.partidaActual.PalabraAMostrar}}
+      </div>
+  
+      
+      <div class="col pe-0">
+        <button class="button-40" type="button" (click)="this.pasarPalabra()">Aceptar</button>
+      </div>
+
+      <div class="col ps-0">
+        <button class="button-40" type="button" (click)="this.partidaActual.resetPalabraAMostrar()">Limpiar</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 700px;">
+    <app-teclado (pasarTeclaApretadaEvent)="this.partidaActual.recibirLetra($event)">
+
+    </app-teclado>
+  </div>
+</div>
+
+<div *ngIf="this.mostrarEncuesta" class="position-absolute top-50 start-50 translate-middle">
+    <app-ingreso-encuesta [idJuego]="this.idJuego" (pasarEncuestaEvent)="this.recibirEncuesta($event)"
+    [nombreUsuario]="this.servicioUsuario.usuarioLogueado.NombreUsuario">
+    </app-ingreso-encuesta>
+</div>
+
+

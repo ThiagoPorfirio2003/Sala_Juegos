@@ -1,0 +1,21 @@
+<div class="juego position-absolute top-50 start-50 translate-middle">
+    <div class="px-4 py-3">
+      <h2>{{this.preguntadoAMostrar.Pregunta}}</h2>
+  
+      <div *ngFor="let respuesta of this.preguntadoAMostrar.RespuestasAMostrar">
+        <button class="button-40" (click)="this.recibirRespuesta(respuesta)">
+            {{respuesta}}
+        </button>
+      </div>
+    </div>
+</div>
+
+
+<div *ngIf="this.mostrarEncuesta" class="position-absolute top-50 start-50 translate-middle">
+    <app-ingreso-encuesta [idJuego]="this.idJuego" (pasarEncuestaEvent)="this.recibirEncuesta($event)"
+    [nombreUsuario]="this.servicioUsuario.usuarioLogueado.NombreUsuario">
+    </app-ingreso-encuesta>
+</div>
+
+
+

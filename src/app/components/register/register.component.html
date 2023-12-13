@@ -1,0 +1,161 @@
+<form class="login-box" [formGroup]="this.formGroup">
+	<h2>Registrar usuario</h2>
+		<div class="col-12; div-ingreso">
+			<label for="nombre">Nombre</label>
+			<input class="input-test" type="text" id="nombre" formControlName="nombre" name="nombre" [(ngModel)]="this.nombre">
+
+			<ul class="list-group" *ngIf="this.formGroup.controls['nombre'].errors != null && this.formGroup.controls['nombre'].touched">
+				<li style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['required']">
+					Este campo no puede estar vacio
+				</li>
+	
+				<li style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['minlength']">
+					El nombre debe tener al menos 2 letras
+				</li>
+	
+				<li style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['pattern']">
+					El nombre debe tener solo letras y espacios 
+				</li>
+	
+				<li style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['maxlength']">
+					El nombre no puede tener mas de 20 letras
+				</li>
+			</ul>
+		</div>
+  
+		<div class="col-12; div-ingreso">
+			<label for="apellido">Apellido</label>
+			<input class="input-test" type="text" id="apellido" formControlName="apellido" name="apellido"  [(ngModel)]="this.apellido"> 
+
+			<ul class="list-group" *ngIf="this.formGroup.controls['apellido'].errors != null && this.formGroup.controls['apellido'].touched">
+				<li style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['required']">
+                    Este campo no puede estar vacio
+                </li>
+    
+                <li style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['minlength']">
+                    El apellido debe tener al menos 2 letras
+                </li>
+    
+                <li style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['pattern']">
+                    El apellido debe tener solo letras y espacios 
+                </li>
+    
+                <li style="color: red;" *ngIf="this.formGroup.controls['apellido'].errors!['maxlength']">
+                    El apellido no puede tener mas de 20 letras
+                </li>
+			</ul>
+		</div>
+
+		<div class="col-12; div-ingreso">
+			<label for="nombreUsuario" >Nombre de usuario</label>
+			<input class="input-test" type="text" id="nombreUsuario" formControlName="nombreUsuario" name="nombreUsuario" [(ngModel)]="this.nombreUsuario">
+		
+			<ul class="list-group" *ngIf="this.formGroup.controls['nombreUsuario'].errors != null">
+				<li *ngIf="this.formGroup.controls['nombreUsuario'].errors!['required'] && this.formGroup.controls['nombreUsuario'].touched">
+					Este campo no puede estar vacio
+				</li>
+
+				<li *ngIf="this.formGroup.controls['nombreUsuario'].errors!['minlength']">
+					El nombre de usuario debe tener al menos 2 caracteres
+				</li>
+
+				<li *ngIf="this.formGroup.controls['nombreUsuario'].errors!['maxlength']">
+					El nombre de usuario no puede tener mas de 20 caracteres
+				</li>
+
+				<li *ngIf="this.formGroup.controls['nombreUsuario'].errors!['hayEspacios']">
+					El nombre de usuario no puede tener espacios
+				</li>
+			</ul>
+		</div>
+
+		<div class="col-12; div-ingreso">
+			<label for="mail">Mail</label>
+			<input class="input-test" type="email" id="mail" formControlName="mail" name="mail" [(ngModel)]="this.mail">
+
+			<ul class="list-group" *ngIf="this.formGroup.controls['mail'].errors != null">
+				<li *ngIf="this.formGroup.controls['mail'].errors!['required'] && this.formGroup.controls['mail'].touched">
+				  Este campo no puede estar vacio
+				</li>
+
+				<li *ngIf="this.formGroup.controls['mail'].errors!['email']">
+				  El mail ingresado no es valido
+				</li>
+			</ul>
+		</div>
+  
+		<div class="col-12; div-ingreso">
+			<label for="clave">Clave</label>
+			<input class="input-test" type="password" id="clave" formControlName="clave" name="clave"  [(ngModel)]="this.clave"> 
+
+			<ul class="list-group" *ngIf="this.formGroup.controls['clave'].errors != null">
+				<li *ngIf="this.formGroup.controls['clave'].errors!['required'] && this.formGroup.controls['clave'].touched">
+				  Este campo no puede estar vacio
+				</li>
+
+				<li *ngIf="this.formGroup.controls['clave'].errors!['minlength']">
+					La clave no puede tener menos de 6 caracteres
+				</li>
+			</ul>
+		</div>
+  
+		<div class="btn-group" style="margin-top: 10px;">
+			<button class="button-40" role="button" (click)="this.pasarDatosRegistro()">Registrar usuario</button>
+		</div>
+  </form>
+
+  <!-- 
+<div class="login-box">
+	<h2>Crear usuario</h2>
+
+	<form>
+		<div class="user-box">
+			<input type="text" name="clave" [(ngModel)]="this.nombre">
+			<label>Nombre</label>
+
+		</div>
+
+
+		<div class="user-box">
+			<input type="text" name="clave" [(ngModel)]="this.apellido">
+			<label>Apellido</label>
+		</div>
+
+		<div class="user-box">
+			<input type="text" name="clave" [(ngModel)]="this.nombreUsuario">
+			<label>Nombre de usuario</label>
+		</div>
+
+		<div class="user-box">
+			<input type="text" name="mail" [(ngModel)]="this.mail">
+			<label>Mail</label>
+		</div>
+
+		<div class="user-box">
+			<input type="password" name="clave" [(ngModel)]="this.clave">
+			<label>Clave</label>
+		</div>
+
+		<button class="button-40" role="button" (click)="pasarDatosRegistro()">Registrar</button>
+	</form>
+ </div>
+
+
+<main>
+	<form id="login_form" class="form_class">
+	  <div class="form_div">
+		  <label>Nombre</label>
+		  <input class="field_class" name="login_txt" type="text" placeholder="Vegeta_777" [(ngModel)]="this.nombre">
+		  <label>Apelldio</label>
+		  <input class="field_class" name="login_txt" type="text" placeholder="Vegeta_777" [(ngModel)]="this.apellido">
+		  <label>Nombre de usuario</label>
+		  <input class="field_class" name="login_txt" type="text" placeholder="Vegeta_777" [(ngModel)]="this.nombreUsuario">
+		  <label>Mail</label>
+		  <input class="field_class" name="login_txt" type="mail" placeholder="Vegeta_777@gmail.com" [(ngModel)]="this.mail">
+		  <label>Clave:</label>
+		  <input id="pass" class="field_class" name="password_txt" type="password" [(ngModel)]="this.clave">
+		  <button class="submit_class" type="button" form="login_form" (click)="pasarDatosRegistro()">Registrar usuario</button>
+	  </div>
+	</form>
+</main>
+  -->

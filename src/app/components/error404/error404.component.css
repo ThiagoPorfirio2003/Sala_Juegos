@@ -1,0 +1,20 @@
+.error-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(246, 24, 24, 0.75);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    color: #000000;
+    font-size: 200px;
+    font-family: "Cormorant Garamond", serif;
+  }

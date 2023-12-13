@@ -1,0 +1,264 @@
+h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .75);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.div-ingreso
+{
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: 10px;
+}
+
+.div-ingreso input
+{
+  width: 100%;
+  /*
+  padding: 10px 0;
+  */
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box h2 {
+  /*
+  margin: 0 0 30px;
+  */
+  margin: 0px;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box label{
+  color: skyblue;
+  display: inline;
+}
+
+.ul-error
+{
+  word-wrap:break-word;
+  white-space:initial;
+  color: red;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #48cae4;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
+}
+
+/*
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  
+  padding: 10px 0;
+  
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 40px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: skyblue;
+  font-size: 15px;
+}
+*/
+
+
+
+/*
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: lightgreen;
+}
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+}
+h1 {
+  letter-spacing: 1.5vw;
+  font-family: 'system-ui';
+  text-transform: uppercase;
+  text-align: center;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  width: 100%;
+  background-size: cover;
+}
+.form_class {
+  width: 500px;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: orange;
+  font-family: 'system-ui';
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+}
+.form_div {
+  text-transform: uppercase;
+}
+.form_div > label {
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+.info_div {
+  text-align: center;
+  margin-top: 20px;
+}
+.info_div {
+  letter-spacing: 1px;
+}
+.field_class {
+  width: 100%;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px 0px;
+  text-indent: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'system-ui';
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+.submit_class {
+  border-style: none;
+  border-radius: 5px;
+  background-color: #FFE6D4;
+  padding: 8px 20px;
+  font-family: 'system-ui';
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+  cursor: pointer;
+}
+footer {
+  height: 10vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -5px -5px 10px rgb(0,0,0,0.3);
+}
+footer > p {
+  text-align: center;
+  font-family: 'system-ui';
+  letter-spacing: 3px;
+}
+footer > p > a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.botones_juntos button
+{
+  border-style: none;
+  border-radius: 5px;
+  background-color: #FFE6D4;
+  padding: 8px 20px;
+  font-family: 'system-ui';
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+  cursor: pointer;
+}
+*/

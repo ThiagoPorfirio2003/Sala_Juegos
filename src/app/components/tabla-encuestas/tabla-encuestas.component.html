@@ -1,0 +1,35 @@
+<table class="table" style="background-color: aqua;width: 100%; text-align: center; min-width: 1000px;">
+    <!-- 
+    nombreEncuestado : 
+    apellidoEncuestado : 
+    edadEncuestado : 
+    numeroTelefono : 
+    queTanDivertidoEs : 
+    calidadDeLosConstroles : 
+    recomendariasElJuego : 
+    idJuego : 
+    -->
+    <tr>
+        <th>Nombre usuario</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Telefono</th>
+        <th>Juego</th>
+        <th>¿Que tan divertido es?</th>
+        <th>Calidad de los controles</th>
+        <th>¿Recomendarias el juego?</th>
+    </tr>
+
+    <tr *ngFor="let encuesta of this.encuestasAMostrar" style="height: 100px">
+        <td>{{encuesta.nombreUsuario}}</td>
+        <td>{{encuesta.apellidoEncuestado}}</td>
+        <td>{{encuesta.nombreEncuestado}}</td>
+        <td>{{encuesta.edadEncuestado}}</td>
+        <td>{{encuesta.numeroTelefono}}</td>
+        <td>{{this.idToNombreJuego(encuesta.idJuego)}}</td>
+        <td>{{this.nivelToPalabra(encuesta.queTanDivertidoEs)}}</td>
+        <td>{{encuesta.calidadDeLosControles}}/100</td>
+        <td>{{this.boolToPalabra(encuesta.recomendariasElJuego)}}</td>
+    </tr>
+</table>

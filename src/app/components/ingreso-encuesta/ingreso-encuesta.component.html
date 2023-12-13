@@ -1,0 +1,136 @@
+<div class="registro">
+    <form  [formGroup]="this.formulario">
+        <div class="row pt-1 px-0">
+            <div class="col px-3"><button type="button" class="button-40 py-2" (click)="this.pasarDatos()">Aceptar</button></div>
+        </div>
+    
+        <div class="row pt-1 px-2">
+            <div class="col">
+                <label style="color: blue;" for="nombre">Nombre</label>
+                <input class="input-text" type="text" id="nombre" formControlName="nombreEncuestado" name="nombre">
+
+                <ul class="list-group" *ngIf="this.formulario.controls['nombreEncuestado'].errors != null && 
+                this.formulario.controls['nombreEncuestado'].touched">
+                    <li *ngIf="this.formulario.controls['nombreEncuestado'].errors!['required']">
+                        Este campo no puede estar vacio
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['nombreEncuestado'].errors!['minlength']">
+                        El nombre debe tener al menos 2 letras
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['nombreEncuestado'].errors!['pattern']">
+                        El nombre debe tener solo letras y espacios 
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['nombreEncuestado'].errors!['maxlength']">
+                        El nombre no puede tener mas de 20 letras
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col">
+                <label style="color: blue;" for="apellido">Apellido</label>
+                <input class="input-text" type="text" id="apellido" formControlName="apellidoEncuestado" name="apellido">
+                
+                <ul class="list-group" *ngIf="this.formulario.controls['apellidoEncuestado'].errors != null && 
+                this.formulario.controls['apellidoEncuestado'].touched">
+                    <li *ngIf="this.formulario.controls['apellidoEncuestado'].errors!['required']">
+                        Este campo no puede estar vacio
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['apellidoEncuestado'].errors!['minlength']">
+                        El apellido debe tener al menos 2 letras
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['apellidoEncuestado'].errors!['pattern']">
+                        El apellido debe tener solo letras y espacios 
+                    </li>
+        
+                    <li *ngIf="this.formulario.controls['apellidoEncuestado'].errors!['maxlength']">
+                        El apellido no puede tener mas de 20 letras
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="row pt-1 px-2">
+            <div class="col">
+                <label style="color: blue;" for="edad">Edad</label>
+                <input class="input-text" type="text" id="edad" formControlName="edadEncuestado" name="edad"> 
+
+                <ul class="list-group" *ngIf="this.formulario.controls['edadEncuestado'].errors != null && 
+                this.formulario.controls['edadEncuestado'].touched">
+                    <small style="color: red;" *ngIf="this.formulario.controls['edadEncuestado'].errors!['required']">
+                        Este campo no puede estar vacio
+                    </small>
+        
+                    <small style="color: red;" *ngIf="this.formulario.controls['edadEncuestado'].errors!['min']">
+                        La edad tiene que ser mayor a 18 años
+                    </small>
+        
+                    <small style="color: red;" *ngIf="this.formulario.controls['edadEncuestado'].errors!['max']">
+                        La edad tiene que ser menor a 99
+                    </small>
+
+                    <small style="color: red;" *ngIf="this.formulario.controls['edadEncuestado'].errors!['pattern']">
+                        Solo se pueden ingresar numeros enteros
+                    </small>
+                </ul>
+            </div>
+    
+            <div class="col">
+                <label style="color: blue;" for="telefono">Numero de telefono</label>
+                <input class="input-text" type="text" id="telefono" formControlName="numeroTelefono" name="telefono"> 
+
+                <ul class="list-group" *ngIf="this.formulario.controls['numeroTelefono'].errors != null && 
+                this.formulario.controls['numeroTelefono'].touched">
+                    <small style="color: red;" *ngIf="this.formulario.controls['numeroTelefono'].errors!['required']">
+                        Este campo no puede estar vacio
+                    </small>
+        
+                    <small style="color: red;" *ngIf="this.formulario.controls['numeroTelefono'].errors!['maxlength']">
+                        La numeroTelefono no puede tener mas de 10 caracteres
+                    </small>
+
+                    <small style="color: red;" *ngIf="this.formulario.controls['numeroTelefono'].errors!['pattern']">
+                        Solo se pueden ingresar numeros enteros
+                    </small>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="row py-2 px-2">
+            <div class="col">
+                <h4>¿Que tan divertido fue el juego?</h4>
+                <div class="form-check" style="align-items: center;">
+                    <input class="form-check-input" type="radio" name="queTanDivertidoEs" id="nada" value=1 
+                    formControlName="queTanDivertidoEs">
+                    <label class="form-check-label" for="nada">Nada</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="queTanDivertidoEs"  id="Poco" value=2
+                    formControlName="queTanDivertidoEs">
+                    <label class="form-check-label" for="Poco">Poco</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="queTanDivertidoEs" id="Decente" value=3
+                    formControlName="queTanDivertidoEs">
+                    <label class="form-check-label" for="Decente">Decente</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="queTanDivertidoEs" id="Mucho" value=4
+                    formControlName="queTanDivertidoEs">
+                    <label class="form-check-label" for="Mucho">Mucho</label>
+                </div>
+            </div>
+    
+            <div class="col">
+                <label for="calSys" style="color: blue;">Calidad de los controles</label>
+                <input class="input-text" type="range" value="50" name="flexRadioDefault" id="calSys" 
+                formControlName="calidadDeLosControles">
+                <br>
+                <input class="form-check-input" type="checkbox" id="recomendariasElJuego" style="margin-right: 5px;" 
+                formControlName="recomendariasElJuego">
+                <label for="recomendariasElJuego">Recomendarias el juego a tus conocidos</label>
+            </div>
+        </div>
+    </form>
+</div>

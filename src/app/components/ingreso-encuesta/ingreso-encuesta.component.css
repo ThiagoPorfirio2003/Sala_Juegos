@@ -1,0 +1,77 @@
+.registro
+{
+    background: rgb(5, 170, 225);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: black solid 5px;
+}
+
+.list-group li
+{
+  word-wrap:break-word;
+  white-space:initial;
+  color: red;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.registro label
+{
+    color: rgb(0, 0, 0);
+}
+
+.registro small
+{
+   word-wrap:break-word;
+}
+
+.input-text
+{
+    width: 100%;
+    /*
+    padding: 10px 0;
+    */
+    color: black;
+    margin-bottom: 0px;
+    border: none;
+    border-bottom: 1px solid #0f5e96;
+    outline: none;
+    background: transparent;
+}
+
+select
+{
+    text-align: center;
+    width: 100%;
+}
+
+.button-40 {
+    background-color: #111827;
+    border: 1px solid transparent;
+  
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    
+    width: 100%;
+}
+  
+.button-40:hover {
+    background-color: #4848e4;
+}
+
+.button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}

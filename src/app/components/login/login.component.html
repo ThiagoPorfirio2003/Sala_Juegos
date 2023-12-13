@@ -1,0 +1,112 @@
+<form class="login-box" [formGroup]="this.formGroup">
+  <h2>Iniciar sesion</h2>
+
+      <div class="col-12; div-ingreso">
+          <label for="mail" >Mail</label>
+          <input class="input-test" type="email" id="mail" formControlName="mail" name="mail" [(ngModel)]="this.mail">
+
+          <ul class="list-group" *ngIf="this.formGroup.controls['mail'].errors != null">
+            <li *ngIf="this.formGroup.controls['mail'].errors!['required'] && this.formGroup.controls['mail'].touched">
+              Este campo no puede estar vacio
+            </li>
+            
+            <li *ngIf="this.formGroup.controls['mail'].errors!['email']">
+              El mail ingresado no es valido
+            </li>
+          </ul>
+      </div>
+
+      <div class="col-12; div-ingreso">
+          <label for="clave">Clave</label>
+          <input class="input-test" type="password" id="clave" formControlName="clave" name="clave"  [(ngModel)]="this.clave">
+
+          <ul class="list-group; ul-error" *ngIf="this.formGroup.controls['clave'].errors != null">
+            <li *ngIf="this.formGroup.controls['clave'].errors!['required'] && this.formGroup.controls['clave'].touched">
+              Este campo no puede estar vacio
+            </li>
+          </ul>
+      </div>
+
+  <div class="btn-group" style="margin-top: 10px;">
+    <button class="button-40" role="button" (click)="this.pasarDatosInicioSesion()">Entrar</button>
+    <button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('admin@gmail.com','admin1234')">Admin</button>
+    <button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('normal@gmail.com','normal1234')">Normal</button>
+  </div>
+</form>
+
+
+<!-- 
+          <ul class="list-group; ul-error" *ngIf="this.formGroup.controls['clave'].errors != null">
+            <li *ngIf="this.formGroup.controls['clave'].errors!['required'] && this.formGroup.controls['clave'].touched"></li>
+          </ul>
+
+
+<input type="text" class="form-control" id="firstName" name="nombre" formControlName="nombre"  [(ngModel)]="this.nombre">
+            
+            <div *ngIf="this.formGroup.controls['nombre'].errors != null && this.formGroup.controls['nombre'].touched">
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['required']">
+                    Este campo no puede estar vacio
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['minlength']">
+                    El nombre debe tener al menos 2 letras
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['pattern']">
+                    El nombre debe tener solo letras y espacios 
+                </small>
+    
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['maxlength']">
+                    El nombre no puede tener mas de 20 letras
+                </small>
+
+                <small style="color: red;" *ngIf="this.formGroup.controls['nombre'].errors!['espaciosAlInicioValidador'] == null">
+                    El nombre no puede iniciar con espacios
+                </small>
+            </div>
+
+
+    <ul class="nav nav-pills">
+    <li class="nav-item"><button class="button-40" role="button" (click)="this.pasarDatosInicioSesion()">Entrar</button></li>
+    <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('admin@gmail.com','admin1234')">Admin</button></li>
+    <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('normal@gmail.com','normal1234')">Normal</button></li>
+  </ul>
+<div class="login-box">
+  <h2>Iniciar sesion</h2>
+  <form autocomplete="off">
+    <div class="user-box">
+      <input type="mail" name="mail" [(ngModel)]="this.mail">
+      <label for="mail">Mail</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="clave" [(ngModel)]="this.clave">
+      <label>Clave</label>
+    </div>
+    <ul class="nav nav-pills">
+      <li class="nav-item"><button class="button-40" role="button" (click)="this.pasarDatosInicioSesion()">Entrar</button></li>
+      <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('admin@gmail.com','admin1234')">Admin</button></li>
+      <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('normal@gmail.com','normal1234')">Normal</button></li>
+    </ul>
+  </form>
+</div>
+
+  
+<main>
+	<form id="login_form" class="form_class">
+    <h1>Iniciar sesion</h1>
+	  <div class="form_div">
+		  <label>Mail</label>
+		  <input class="field_class" name="login_txt" type="mail" placeholder="Vegeta_777@gmail.com" [(ngModel)]="this.mail">
+      <small>ERROR</small>
+		  <label>Clave:</label>
+		  <input id="pass" class="field_class" name="password_txt" type="password" [(ngModel)]="this.clave">
+		  <ul class="nav nav-pills">
+        <li class="nav-item"><button class="button-40" role="button" (click)="this.pasarDatosInicioSesion()">Entrar</button></li>
+        <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('admin@gmail.com','admin1234')">Admin</button></li>
+        <li class="nav-item"><button class="button-40" role="button" (click)="this.cargarDatosAuxiliares('normal@gmail.com','normal1234')">Normal</button></li>
+      </ul>
+	  </div>
+	</form>
+</main>
+
+-->

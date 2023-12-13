@@ -1,0 +1,174 @@
+.container {
+    position: absolute;
+    width: 750px;
+        /*
+            border-radius: 5px;
+
+    background: #444753;
+    */
+}
+
+.chat {
+    background: rgba(0, 0, 0, .75);
+    border-top-right-radius: 5px;
+  
+  /*
+  width: 490px;
+  float: left;
+  border-bottom-right-radius: 5px;
+  color: #434651;
+*/
+}
+
+.chat .chat-history {
+  padding: 30px 30px 20px;
+  /*
+  border-bottom: 2px solid white;
+  */
+  overflow-y: scroll;
+  height: 693px;
+}
+.chat .chat-history .message-data {
+  margin-bottom: 15px;
+}
+.chat .chat-history .message-data-time {
+  color: #f6f7fb;
+  padding-left: 6px;
+}
+.chat .chat-history .message {
+  color: white;
+  padding: 18px 20px;
+  line-height: 26px;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-bottom: 30px;
+  width: 90%;
+  position: relative;
+}
+/*
+.chat .chat-history .message:after {
+  bottom: 100%;
+  left: 7%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #86BB71;
+  border-width: 10px;
+  margin-left: -10px;
+}
+*/
+.chat .chat-history .my-message {
+  background: rgba(128, 208, 99, 0.75);
+  /*
+  background: #86BB71;
+  */
+}
+.chat .chat-history .other-message {
+  background: hsl(209, 71%, 75%, .75);
+}
+/*
+.chat .chat-history .other-message:after {
+  border-bottom-color: #94C2ED;
+  left: 93%;
+}
+*/
+.chat .chat-message {
+  padding: 30px;
+}
+.chat .chat-message input
+{
+  width: 100%;
+  /*
+  padding: 10px 0;
+  */
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.online, .offline, .me {
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.online {
+  color: #86BB71;
+}
+
+.offline {
+  color: #E38968;
+}
+
+.me {
+  color: #94C2ED;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.float-right {
+  float: right;
+}
+
+/*
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+*/
+.button-40 {
+    background-color: #111827;
+    border: 1px solid transparent;
+  
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .button-40:hover {
+    background-color: #48cae4;
+  }
+  
+  .button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-40 {
+      padding: .75rem 1.5rem;
+    }
+  }

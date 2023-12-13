@@ -1,0 +1,71 @@
+td
+{
+    border: black 2px solid;
+}
+
+th
+{
+    background-color: #77c0ff;
+    border: black 2px solid;
+}
+
+div
+{
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.button-acceder {
+    background-color: #111827;
+    border: 1px solid transparent;
+  
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    
+    height: 100%;
+    width: 100%;
+}
+  
+.button-acceder:hover {
+    background-color: #4848e4;
+}
+
+.button-acceder:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button-habilitacion {
+    background-color: #111827;
+    border: 1px solid transparent;
+  
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    
+    width: 100%;
+}
+  
+.button-habilitacion:hover {
+    background-color: #4848e4;
+}
+
+.button-habilitacion:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}

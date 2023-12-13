@@ -1,0 +1,26 @@
+<header class="d-flex justify-content-center py-3 bg-dark">
+  <ul class="nav nav-pills">
+    <li class="nav-item" *ngIf="this.servicioUsuario.EstaLogueado">
+      <label class="button-Nombre" role="button" disabled>{{this.servicioUsuario.usuarioLogueado.NombreUsuario}}</label>
+    </li>
+
+    <li class="nav-item"><button class="button-40" role="button" routerLink="/quienSoy">Quien soy</button></li>
+    <section *ngIf="this.servicioUsuario.EstaLogueado; then verdadero; else falso"></section>
+
+  </ul>
+</header>
+
+<ng-template #verdadero>
+  <li class="nav-item"><button routerLink="/home" class="button-40" role="button">Home</button></li>
+  <section *ngIf="this.servicioUsuario.usuarioLogueado.Tipo==0;">
+  <li>
+    <button class="button-40" routerLink="/home/encuestas" role="button">Encuestas</button>
+  </li>
+  </section>
+  <li class="nav-item"><button class="button-CerrarSesion" role="button" (click)="this.preguntarCerrarSesion()">Cerrar sesion</button></li>
+</ng-template>
+    
+<ng-template #falso>
+  <li class="nav-item"><button class="button-40" role="button" (click)="cambiarQuiereRegistrarse(false)">Iniciar sesion</button></li>
+  <li class="nav-item"><button class="button-40" role="button" (click)="cambiarQuiereRegistrarse(true)">Crear usuario</button></li>
+</ng-template>

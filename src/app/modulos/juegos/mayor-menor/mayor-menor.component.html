@@ -1,0 +1,31 @@
+<div class="juego pt-2 position-absolute top-50 start-50 translate-middle" >
+    <h2>¿a siguiente carta es?</h2>
+
+    <div class="row pt-3">
+        <div class="col" style="justify-content: center;display: flex;">
+            <img src={{this.imgAMostrar}}>
+        </div>
+
+        <div class="col" style="justify-content: center;display: flex;">
+            <img src='https://www.deckofcardsapi.com/static/img/back.png'>
+        </div>
+    </div>
+
+    <div class="row pb-0">
+        <div class="col pe-0">
+            <button class="button-40" type="button" (click)="this.recibirRespuesta(false)">Menor</button>
+        </div>
+
+        <div class="col ps-0">
+            <button class="button-40" type="button" (click)="this.recibirRespuesta(true)">Mayor</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="this.mostrarEncuesta" class="position-absolute top-50 start-50 translate-middle">
+    <app-ingreso-encuesta [idJuego]="this.idJuego" (pasarEncuestaEvent)="this.recibirEncuesta($event)"
+    [nombreUsuario]="this.servicioUsuario.usuarioLogueado.NombreUsuario">
+    </app-ingreso-encuesta>
+</div>
+
+

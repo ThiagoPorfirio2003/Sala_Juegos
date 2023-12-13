@@ -1,0 +1,25 @@
+<table class="table" style="background-color: aqua;width: 100%; text-align: center; min-width: 1000px;">
+    <tr>
+        <th *ngIf="this.tipoUsuarioVisualizador == 0">Usuario</th>
+        <th>Juego</th>
+        <th>Partidas jugadas</th>
+        <th>Partidas ganadas</th>
+        <th>Partidas perdidas</th>
+        <th>Racha actual</th>
+        <th>Mayor racha</th>
+        <th>Racha de perdidas</th>
+        <th>Mayor racha de perdidas</th>
+    </tr>
+
+    <tr *ngFor="let estadistica of this.estadisticasAMostrar" style="height: 100px">
+        <td *ngIf="this.tipoUsuarioVisualizador == 0">{{estadistica.nombreUsuario}}</td>
+        <td>{{this.idJuegoToPalabra(estadistica.idJuego)}}</td>
+        <td>{{estadistica.partidasJugadas}}</td>
+        <td>{{estadistica.partidasGanadas}}</td>
+        <td>{{estadistica.partidasPerdidas}}</td>
+        <td>{{estadistica.rachaActual}}</td>
+        <td>{{estadistica.mayorRacha}}</td>
+        <td>{{estadistica.rachaPerdidasActual}}</td>
+        <td>{{estadistica.mayorRachaPerdidas}}</td>
+    </tr>
+</table>

@@ -1,0 +1,2 @@
+<app-login *ngIf="!this.servicioUsuario.quiereRegistrarse" (pasarDatosInicioSesionEvent)="this.autenticarDatos($event)"></app-login>
+<app-register *ngIf="this.servicioUsuario.quiereRegistrarse" (pasarDatosRegistroEvent)="this.registrarUsuario($event)"></app-register>

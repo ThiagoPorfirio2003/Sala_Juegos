@@ -1,0 +1,47 @@
+<!--<div class="container clearfix"></div>
+ -->
+    <div class="chat">
+        <div class="chat-history">
+            <ul>
+              <li class="clearfix" *ngFor="let mensaje of this.listaMensajes">
+                <section *ngIf="this.servicioUsuario.usuarioLogueado.NombreUsuario === mensaje.NombreUsuarioEmisor; then yo; else otro">
+                </section>
+
+                <ng-template #otro>
+                  <div class="message-data">
+                    <span class="message-data-name" style="color: hsl(209, 71%, 75%, .75);">{{mensaje.NombreUsuarioEmisor}}</span> 
+                    <i class="fa fa-circle me"></i>
+                    <span class="message-data-time">{{mensaje.FechaEmisionString}}</span> &nbsp; &nbsp;
+                  </div>
+  
+                  <div class="message other-message">
+                    {{mensaje.Texto}}
+                  </div>
+                </ng-template>
+
+                <ng-template #yo>
+                  <div class="message-data align-right">
+                    <span class="message-data-name" style="color:rgba(128, 208, 99, 0.75);"><i class="fa fa-circle online"></i>Vos</span>
+                    <span class="message-data-time">{{mensaje.FechaEmisionString}}</span>
+                  </div>
+
+                  <div class="message my-message float-right">
+                    {{mensaje.Texto}}
+                  </div>
+                </ng-template>
+              </li>
+            </ul>
+          </div>
+    
+
+          <div class="chat-message">
+            <div class="row"> 
+                <div class="col-lg-12"> 
+                    <div class="form-group"> 
+                        <input class="input-test" type="text" id="mensaje" name="mensaje" [(ngModel)]="this.textoActual">
+                        <button class="button-40" role="button" (click)="this.enviarMensaje()">Enviar</button>
+                    </div> 
+                </div> 
+            </div>  
+        </div>
+</div>

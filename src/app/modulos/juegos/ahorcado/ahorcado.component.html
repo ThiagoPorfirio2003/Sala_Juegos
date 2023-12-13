@@ -1,0 +1,28 @@
+<div class="juego">
+
+    <div class="row align-items-start">
+      <div class="col align-self-center">
+          <button class="button-ayuda" (click)="this.mostrarPista()">Pista</button>
+          <label class="label-errores">Intentos restantes: {{this.juegoAhorcado.ErroresMaximo - this.juegoAhorcado.ErroresHechos}}</label>
+      </div>
+        <img src={{this.pathImagenAMostrar}}>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="container">
+            <div id="palabraOculta" class="display-4 text-center" style="color: white;">
+                {{this.juegoAhorcado.PalabraAMostrar}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-end">
+        <app-teclado (pasarTeclaApretadaEvent)="this.recibirLetra($event)"></app-teclado>
+    </div>
+</div>
+
+<div *ngIf="this.mostrarEncuesta" class="position-absolute top-50 start-50 translate-middle">
+  <app-ingreso-encuesta [idJuego]="this.idJuego" (pasarEncuestaEvent)="this.recibirEncuesta($event)"
+  [nombreUsuario]="this.servicioUsuario.usuarioLogueado.NombreUsuario">
+  </app-ingreso-encuesta>
+</div>
